@@ -14,6 +14,9 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 
+//Add Swagger
+builder.Services.AddSwaggerGen();
+
 
 //var connectionString = builder.Configuration.GetConnectionString(nameof(PeopleManagerDbContext));
 
@@ -36,6 +39,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseSwagger();
+    app.UseSwaggerUI();
     app.MapOpenApi();
 }
 

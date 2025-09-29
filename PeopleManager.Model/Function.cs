@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace PeopleManager.Model
 {
@@ -12,6 +13,8 @@ namespace PeopleManager.Model
         public required string Name { get; set; }
         public string? Description { get; set; }
 
+
+        [JsonIgnore]
         public IList<Person> People { get; set; } = new List<Person>();
     }
 }
