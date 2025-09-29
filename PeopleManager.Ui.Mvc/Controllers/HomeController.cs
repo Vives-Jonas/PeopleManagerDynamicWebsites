@@ -7,12 +7,10 @@ namespace PeopleManager.Ui.Mvc.Controllers;
 
 public class HomeController(PersonService personService) : Controller
 {
-    private readonly PersonService _personService = personService;
-
     [HttpGet]
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        var people = _personService.Find();
+        var people = await personService.Find();
 
         return View(people);
     }

@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using PeopleManager.Model;
 using PeopleManager.Services;
 
@@ -11,45 +10,45 @@ namespace PeopleManager.Api.Controllers
     {
         //FIND
         [HttpGet]
-        public IActionResult Find()
+        public async Task<IActionResult> Find()
         {
-            var people = personService.Find();
+            var people = await personService.Find();
             return Ok(people);
         }
 
 
         //GET
         [HttpGet("{id:int}")]
-        public IActionResult Get([FromRoute]int id)
+        public async Task<IActionResult> Get([FromRoute]int id)
         {
-            var people = personService.Get(id);
+            var people = await personService.Get(id);
             return Ok(people);
         }
 
 
         //CREATE
         [HttpPost]
-        public IActionResult Create([FromBody] Person person)
+        public async Task<IActionResult> Create([FromBody] Person person)
         {
-            var newPerson = personService.Create(person);
+            var newPerson = await personService.Create(person);
             return Ok(newPerson);
         }
 
 
         //UPDATE
         [HttpPut("{id:int}")]
-        public IActionResult Update([FromRoute] int id, [FromBody] Person person)
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Person person)
         {
-            var updatedPerson = personService.Update(id, person);
+            var updatedPerson = await personService.Update(id, person);
             return Ok(updatedPerson);
         }
 
 
         //DELETE
         [HttpDelete("{id:int}")]
-        public IActionResult Delete([FromRoute] int id)
+        public async Task<IActionResult> Delete([FromRoute] int id)
         {
-            personService.Delete(id);
+            await personService.Delete(id);
             return Ok();
         }
     }
