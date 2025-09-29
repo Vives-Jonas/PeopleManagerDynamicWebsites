@@ -6,7 +6,7 @@ namespace PeopleManager.Services
 {
     public class FunctionService(PeopleManagerDbContext dbContext)
     {
-        
+
 
         public async Task<IList<Function>> Find()
         {
@@ -45,8 +45,8 @@ namespace PeopleManager.Services
 
             dbFunction.Name = function.Name;
             dbFunction.Description = function.Description;
-            
-           await dbContext.SaveChangesAsync();
+
+            await dbContext.SaveChangesAsync();
 
             return dbFunction;
         }

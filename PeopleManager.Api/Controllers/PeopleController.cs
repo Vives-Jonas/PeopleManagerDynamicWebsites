@@ -21,8 +21,8 @@ namespace PeopleManager.Api.Controllers
         [HttpGet("{id:int}")]
         public async Task<IActionResult> Get([FromRoute]int id)
         {
-            var people = await personService.Get(id);
-            return Ok(people);
+            var person = await personService.Get(id);
+            return Ok(person);
         }
 
 
