@@ -4,18 +4,11 @@ using PeopleManager.Repository;
 
 namespace PeopleManager.Services
 {
-    public class PersonService
+    public class PersonService(PeopleManagerDbContext dbContext)
     {
-        private readonly PeopleManagerDbContext _dbContext;
-
-        public PersonService(PeopleManagerDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
-
         public async Task<IList<Person>> Find()
         {
-            var people = await _dbContext.People
+            var people = await dbContext.People
                 .Include(p => p.Function)
                 .ToListAsync();
             return people;
@@ -23,7 +16,7 @@ namespace PeopleManager.Services
 
         public async Task<Person?> Get(int id)
         {
-            var person = await _dbContext.People
+            var person = await dbContext.People
                 .Include(p => p.Function)
                 .FirstOrDefaultAsync(p => p.Id == id);
             return person;
@@ -40,9 +33,9 @@ namespace PeopleManager.Services
                 return null;
             }
 
-            _dbContext.People.Add(person);
+            dbContext.People.Add(person);
 
-            await _dbContext.SaveChangesAsync();
+            await dbContext.SaveChangesAsync();
 
             return person;
         }
@@ -62,7 +55,7 @@ namespace PeopleManager.Services
             dbPerson.Email = person.Email;
             dbPerson.FunctionId = person.FunctionId;
 
-            await _dbContext.SaveChangesAsync();
+            await dbContext.SaveChangesAsync();
 
             return dbPerson;
         }
@@ -78,9 +71,9 @@ namespace PeopleManager.Services
             //var person = new Person { Id = id, FirstName = string.Empty, LastName = string.Empty };
             //_dbContext.People.Attach(person);
 
-            _dbContext.People.Remove(person);
+            dbContext.People.Remove(person);
 
-            await _dbContext.SaveChangesAsync();
+            await dbContext.SaveChangesAsync();
         }
     }
 }

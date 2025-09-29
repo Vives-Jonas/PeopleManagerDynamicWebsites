@@ -4,24 +4,19 @@ using PeopleManager.Repository;
 
 namespace PeopleManager.Services
 {
-    public class FunctionService
+    public class FunctionService(PeopleManagerDbContext dbContext)
     {
-        private readonly PeopleManagerDbContext _dbContext;
-
-        public FunctionService(PeopleManagerDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
+        
 
         public async Task<IList<Function>> Find()
         {
-            var functions = await _dbContext.Functions.ToListAsync();
+            var functions = await dbContext.Functions.ToListAsync();
             return functions;
         }
 
         public async Task<Function?> Get(int id)
         {
-            var function = await _dbContext.Functions.FirstOrDefaultAsync(f => f.Id == id);
+            var function = await dbContext.Functions.FirstOrDefaultAsync(f => f.Id == id);
             return function;
         }
 
@@ -32,9 +27,9 @@ namespace PeopleManager.Services
                 return null;
             }
 
-            _dbContext.Functions.Add(function);
+            dbContext.Functions.Add(function);
 
-            await _dbContext.SaveChangesAsync();
+            await dbContext.SaveChangesAsync();
 
             return function;
         }
@@ -51,7 +46,7 @@ namespace PeopleManager.Services
             dbFunction.Name = function.Name;
             dbFunction.Description = function.Description;
             
-           await _dbContext.SaveChangesAsync();
+           await dbContext.SaveChangesAsync();
 
             return dbFunction;
         }
@@ -67,9 +62,9 @@ namespace PeopleManager.Services
             //var function = new Function { Id = id, Name = string.Empty };
             //_dbContext.Functions.Attach(function);
 
-            _dbContext.Functions.Remove(function);
+            dbContext.Functions.Remove(function);
 
-            await _dbContext.SaveChangesAsync();
+            await dbContext.SaveChangesAsync();
         }
     }
 }

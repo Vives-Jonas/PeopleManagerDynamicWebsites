@@ -50,7 +50,7 @@ else
     var dbContext = scope.ServiceProvider.GetRequiredService<PeopleManagerDbContext>();
     if (dbContext.Database.IsInMemory())
     {
-        dbContext.Seed();
+        await dbContext.Seed();
     }
 }
 
