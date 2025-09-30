@@ -1,4 +1,4 @@
-﻿@model Person
+﻿@model PersonResult
 
 <tr>
     <td>@Model.FirstName</td>
@@ -16,7 +16,7 @@
     <td>
         @if (Model.Function is not null)
         {
-            <span class="badge text-bg-primary">@Model.Function.Name</span>
+            <span class="badge text-bg-primary">@Model.Function</span>
         }
         else
         {

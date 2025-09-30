@@ -42,6 +42,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
     app.MapOpenApi();
+    
+    using var scope = app.Services.CreateScope();
+
+    var dbContext = scope.ServiceProvider.GetRequiredService<PeopleManagerDbContext>();
+    if (dbContext.Database.IsInMemory())
+    {
+       await dbContext.Seed();
+    }
+    
 }
 
 app.UseHttpsRedirection();

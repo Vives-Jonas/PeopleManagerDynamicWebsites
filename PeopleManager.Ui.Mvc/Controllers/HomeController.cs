@@ -1,16 +1,16 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using PeopleManager.Services;
+using PeopleManager.Sdk;
 using PeopleManager.Ui.Mvc.Models;
 
 namespace PeopleManager.Ui.Mvc.Controllers;
 
-public class HomeController(PersonService personService) : Controller
+public class HomeController(PersonClient personClient) : Controller
 {
     [HttpGet]
     public async Task<IActionResult> Index()
     {
-        var people = await personService.Find();
+        var people = await personClient.Find();
 
         return View(people);
     }

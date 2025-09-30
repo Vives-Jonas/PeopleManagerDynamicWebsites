@@ -1,38 +1,25 @@
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using PeopleManager.Repository;
-using PeopleManager.Services;
+using PeopleManager.Sdk;
+using PeopleManager.Ui.Mvc.Settings;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-//var connectionString = builder.Configuration.GetConnectionString(nameof(PeopleManagerDbContext));
+var appSettings = new AppSettings();
 
-builder.Services.AddDbContext<PeopleManagerDbContext>(options =>
+builder.Configuration.Bind(nameof(AppSettings), appSettings);
+
+builder.Services.AddSingleton(appSettings);
+
+builder.Services.AddHttpClient("PeopleManagerApi", (provider, client) =>
 {
-    options.UseInMemoryDatabase(nameof(PeopleManagerDbContext));
-    //options.UseSqlServer(connectionString);
+    client.BaseAddress = new Uri(appSettings.ApiBaseUrl);
 });
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options =>
-    {
-        //options.SignIn.RequireConfirmedAccount = true;
-    })
-    .AddEntityFrameworkStores<PeopleManagerDbContext>();
-
-builder.Services.ConfigureApplicationCookie(options =>
-{
-    options.Cookie.HttpOnly = true;
-    options.LoginPath = "/Identity/SignIn";
-    options.AccessDeniedPath = "/Identity/SignIn";
-    options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
-    options.SlidingExpiration = true;
-});
-
-builder.Services.AddScoped<FunctionService>();
-builder.Services.AddScoped<PersonService>();
+builder.Services.AddScoped<FunctionClient>();
+builder.Services.AddScoped<PersonClient>();
 
 var app = builder.Build();
 
@@ -43,16 +30,7 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-else
-{
-    using var scope = app.Services.CreateScope();
 
-    var dbContext = scope.ServiceProvider.GetRequiredService<PeopleManagerDbContext>();
-    if (dbContext.Database.IsInMemory())
-    {
-        await dbContext.Seed();
-    }
-}
 
 app.UseHttpsRedirection();
 app.UseRouting();
