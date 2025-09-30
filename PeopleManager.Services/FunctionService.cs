@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PeopleManager.Dto.Requests;
+using PeopleManager.Dto.Results;
 using PeopleManager.Model;
 using PeopleManager.Repository;
 
@@ -8,52 +10,72 @@ namespace PeopleManager.Services
     {
 
 
-        public async Task<IList<Function>> Find()
+        public async Task<IList<FunctionResult>> Find()
         {
-            var functions = await dbContext.Functions.ToListAsync();
+            var functions = await dbContext.Functions.Select(f => new FunctionResult
+            {
+                Id = f.Id,
+                Name = f.Name,
+                Description = f.Description,
+                NumberOfPeople = f.People.Count
+            }).ToListAsync();
+
             return functions;
         }
 
-        public async Task<Function?> Get(int id)
+        public async Task<FunctionResult?> Get(int id)
         {
-            var function = await dbContext.Functions.FirstOrDefaultAsync(f => f.Id == id);
+            var function = await dbContext.Functions.Select(f => new FunctionResult
+            {
+                Id = f.Id,
+                Name = f.Name,
+                Description = f.Description,
+                NumberOfPeople = f.People.Count
+            }).FirstOrDefaultAsync(f => f.Id == id);
+
             return function;
         }
 
-        public async Task<Function?> Create(Function function)
+        public async Task<FunctionResult?> Create(FunctionRequest request)
         {
-            if (string.IsNullOrWhiteSpace(function.Name))
+            if (string.IsNullOrWhiteSpace(request.Name))
             {
                 return null;
             }
+
+            var function = new Function
+            {
+                Name = request.Name,
+                Description = request.Description,
+            };
 
             dbContext.Functions.Add(function);
 
             await dbContext.SaveChangesAsync();
 
-            return function;
+            return await Get(function.Id);
         }
 
-        public async Task<Function?> Update(int id, Function function)
+        public async Task<FunctionResult?> Update(int id, FunctionRequest request)
         {
-            var dbFunction = await Get(id);
+            var function = await dbContext.Functions.FirstOrDefaultAsync(f => f.Id == id);
 
-            if (dbFunction == null)
+            if (function == null)
             {
                 return null;
             }
 
-            dbFunction.Name = function.Name;
-            dbFunction.Description = function.Description;
+            function.Name = request.Name;
+            function.Description = request.Description;
 
             await dbContext.SaveChangesAsync();
 
-            return dbFunction;
+            return await Get(function.Id);
         }
 
         public async Task Delete(int id)
         {
-            var function = await Get(id);
+            var function = await dbContext.Functions.FirstOrDefaultAsync(f => f.Id == id);
 
             if (function is null)
             {
