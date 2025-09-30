@@ -3,6 +3,7 @@ using PeopleManager.Dto.Requests;
 using PeopleManager.Dto.Results;
 using PeopleManager.Model;
 using PeopleManager.Repository;
+using PeopleManager.Services.Extensions;
 
 namespace PeopleManager.Services
 {
@@ -10,28 +11,16 @@ namespace PeopleManager.Services
     {
 
 
-        public async Task<IList<FunctionResult>> Find()
+        public async Task<IList<FunctionResult>> Find() 
         {
-            var functions = await dbContext.Functions.Select(f => new FunctionResult
-            {
-                Id = f.Id,
-                Name = f.Name,
-                Description = f.Description,
-                NumberOfPeople = f.People.Count
-            }).ToListAsync();
-
-            return functions;
+            return await dbContext.Functions.ProjectToResult().ToListAsync();
+            
+            
         }
 
         public async Task<FunctionResult?> Get(int id)
         {
-            var function = await dbContext.Functions.Select(f => new FunctionResult
-            {
-                Id = f.Id,
-                Name = f.Name,
-                Description = f.Description,
-                NumberOfPeople = f.People.Count
-            }).FirstOrDefaultAsync(f => f.Id == id);
+            var function = await dbContext.Functions.ProjectToResult().FirstOrDefaultAsync(f => f.Id == id);
 
             return function;
         }
