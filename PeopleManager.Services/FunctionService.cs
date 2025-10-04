@@ -13,14 +13,14 @@ namespace PeopleManager.Services
 
         public async Task<IList<FunctionResult>> Find() 
         {
-            return await dbContext.Functions.ProjectToResult().ToListAsync();
+            return await dbContext.Functions.AsNoTracking().ProjectToResult().ToListAsync();
             
             
         }
 
         public async Task<FunctionResult?> Get(int id)
         {
-            var function = await dbContext.Functions.ProjectToResult().FirstOrDefaultAsync(f => f.Id == id);
+            var function = await dbContext.Functions.AsNoTracking().ProjectToResult().FirstOrDefaultAsync(f => f.Id == id);
 
             return function;
         }
@@ -70,8 +70,7 @@ namespace PeopleManager.Services
             {
                 return;
             }
-            //var function = new Function { Id = id, Name = string.Empty };
-            //_dbContext.Functions.Attach(function);
+            
 
             dbContext.Functions.Remove(function);
 

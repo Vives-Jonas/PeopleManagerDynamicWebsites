@@ -10,6 +10,7 @@ namespace PeopleManager.Sdk
         {
             var httpClient = httpClientFactory.CreateClient("PeopleManagerApi");
             var response = await httpClient.GetAsync("functions");
+
             response.EnsureSuccessStatusCode();
 
             var result = await response.Content.ReadFromJsonAsync<IList<FunctionResult>>();

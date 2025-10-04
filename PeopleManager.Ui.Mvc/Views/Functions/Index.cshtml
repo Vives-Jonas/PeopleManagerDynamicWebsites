@@ -9,21 +9,22 @@
 <a asp-action="Create" class="btn btn-primary">New Function</a>
 <table class="table table-striped">
     <thead>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Actions</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>People</th>
+    <th>Actions</th>
     </thead>
     <tbody>
-    @foreach (var function in Model)
-    {
-        <partial name="FunctionRowPartial" model="function" />
-    }
+        @foreach (var function in Model)
+        {
+            <partial name="FunctionRowPartial" model="function" />
+        }
     </tbody>
 </table>
 
 @section Modals
 {
-    
+
     <!-- Modal -->
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -36,8 +37,8 @@
                     <p>Are you sure you want to delete this function "<span id="functionName"></span>"?</p>
                 </div>
                 <div class="modal-footer">
-                    <form asp-action="DeleteConfirmed" method="post">
-                        <input type="hidden" name="Id"/>
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" name="Id" />
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
                         <button type="submit" class="btn btn-primary">Yes</button>
                     </form>
@@ -53,7 +54,7 @@
         $(function(){
             $("[data-type='deleteButton']").on("click", function(){
 
-                let id = $(this).data("id");                
+                let id = $(this).data("id");
                 let input = $("input[name='Id']", "#deleteModal")
                 $(input).val(id);
 

@@ -12,8 +12,8 @@ namespace PeopleManager.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> Find()
         {
-            var functions = await functionService.Find();
-            return Ok(functions);
+            var result = await functionService.Find();
+            return Ok(result);
         }
 
 
@@ -21,8 +21,8 @@ namespace PeopleManager.Api.Controllers
         [HttpGet("{id:int}")]
         public async Task<IActionResult> Get([FromRoute] int id)
         {
-            var function = await functionService.Get(id);
-            return Ok(function);
+            var result = await functionService.Get(id);
+            return Ok(result);
         }
 
 
@@ -30,8 +30,8 @@ namespace PeopleManager.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] FunctionRequest request)
         {
-            var newFunction = await functionService.Create(request);
-            return Ok(newFunction);
+            var result = await functionService.Create(request);
+            return Ok(result);
         }
 
 
@@ -39,8 +39,8 @@ namespace PeopleManager.Api.Controllers
         [HttpPut("{id:int}")]
         public async Task<IActionResult> Update([FromRoute] int id, [FromBody] FunctionRequest request)
         {
-            var updatedFunction = await functionService.Update(id, request);
-            return Ok(updatedFunction);
+            var result = await functionService.Update(id, request);
+            return Ok(result);
         }
 
 

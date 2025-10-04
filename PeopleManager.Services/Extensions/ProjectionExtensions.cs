@@ -17,5 +17,18 @@ namespace PeopleManager.Services.Extensions
 
 
         }
+
+        public static IQueryable<PersonResult> ProjectToResult(this IQueryable<Person> query)
+        {
+            return query.Select(p => new PersonResult
+            {
+                Id = p.Id,
+                FirstName = p.FirstName,
+                LastName = p.LastName,
+                Email = p.Email,
+                FunctionId = p.FunctionId,
+                Function = p.Function != null ? p.Function.Name : null
+            });
+        }
     }
 }

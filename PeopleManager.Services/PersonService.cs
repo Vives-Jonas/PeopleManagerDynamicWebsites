@@ -3,6 +3,7 @@ using PeopleManager.Dto.Requests;
 using PeopleManager.Dto.Results;
 using PeopleManager.Model;
 using PeopleManager.Repository;
+using PeopleManager.Services.Extensions;
 
 namespace PeopleManager.Services
 {
@@ -10,32 +11,20 @@ namespace PeopleManager.Services
     {
         public async Task<IList<PersonResult>> Find()
         {
-            var people = await dbContext.People
-                .Include(p => p.Function).Select(p => new PersonResult
-                {
-                    Id = p.Id,
-                    FirstName = p.FirstName,
-                    LastName = p.LastName,
-                    Email = p.Email,
-                    Function = p.Function.Name ?? "No Function"
-                })
+            return await dbContext.People
+                .AsNoTracking()
+                .Include(p => p.Function)
+                .ProjectToResult()
                 .ToListAsync();
-            return people;
         }
 
         public async Task<PersonResult?> Get(int id)
         {
-            var person = await dbContext.People
-                .Include(p => p.Function).Select(p => new PersonResult
-                {
-                    Id = p.Id,
-                    FirstName = p.FirstName,
-                    LastName = p.LastName,
-                    Email = p.Email,
-                    Function = p.Function.Name ?? "No Function"
-                })
+            return await dbContext.People
+                .AsNoTracking()
+                .Include(p => p.Function)
+                .ProjectToResult()
                 .FirstOrDefaultAsync(p => p.Id == id);
-            return person;
         }
 
         public async Task<PersonResult?> Create(PersonRequest request)
@@ -51,9 +40,10 @@ namespace PeopleManager.Services
 
             var person = new Person
             {
-                FirstName =  request.FirstName,
+                FirstName = request.FirstName,
                 LastName = request.LastName,
                 Email = request.Email,
+                FunctionId = request.FunctionId
             };
 
             dbContext.People.Add(person);
@@ -77,6 +67,7 @@ namespace PeopleManager.Services
             person.FirstName = request.FirstName;
             person.LastName = request.LastName;
             person.Email = request.Email;
+            person.FunctionId = request.FunctionId;
 
             await dbContext.SaveChangesAsync();
 
