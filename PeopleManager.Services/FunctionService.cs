@@ -4,6 +4,8 @@ using PeopleManager.Dto.Results;
 using PeopleManager.Model;
 using PeopleManager.Repository;
 using PeopleManager.Services.Extensions;
+using Vives.Services.Model;
+using Vives.Services.Model.Extensions;
 
 namespace PeopleManager.Services
 {
@@ -25,11 +27,13 @@ namespace PeopleManager.Services
             return function;
         }
 
-        public async Task<FunctionResult?> Create(FunctionRequest request)
+        public async Task<ServiceResult<FunctionResult>> Create(FunctionRequest request)
         {
+            
             if (string.IsNullOrWhiteSpace(request.Name))
             {
-                return null;
+                return new ServiceResult<FunctionResult>().Required(nameof(request.Name));
+                
             }
 
             var function = new Function
@@ -42,7 +46,12 @@ namespace PeopleManager.Services
 
             await dbContext.SaveChangesAsync();
 
-            return await Get(function.Id);
+            var functionResult = await Get(function.Id);
+
+            return new ServiceResult<FunctionResult>
+            {
+                Data = functionResult
+            };
         }
 
         public async Task<FunctionResult?> Update(int id, FunctionRequest request)
@@ -62,19 +71,20 @@ namespace PeopleManager.Services
             return await Get(function.Id);
         }
 
-        public async Task Delete(int id)
+        public async Task<ServiceResult> Delete(int id)
         {
             var function = await dbContext.Functions.FirstOrDefaultAsync(f => f.Id == id);
-
+           
             if (function is null)
             {
-                return;
+                return new ServiceResult().AlreadyRemoved();
             }
-            
 
             dbContext.Functions.Remove(function);
 
             await dbContext.SaveChangesAsync();
+
+            return new ServiceResult();
         }
     }
 }
