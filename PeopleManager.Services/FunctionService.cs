@@ -11,20 +11,19 @@ namespace PeopleManager.Services
 {
     public class FunctionService(PeopleManagerDbContext dbContext)
     {
-
-
-        public async Task<IList<FunctionResult>> Find() 
+        public async Task<IList<FunctionResult>> Find()
         {
+
             return await dbContext.Functions.AsNoTracking().ProjectToResult().ToListAsync();
-            
-            
+
+
         }
 
         public async Task<FunctionResult?> Get(int id)
         {
-            var function = await dbContext.Functions.AsNoTracking().ProjectToResult().FirstOrDefaultAsync(f => f.Id == id);
+            return await dbContext.Functions.AsNoTracking().ProjectToResult().FirstOrDefaultAsync(f => f.Id == id);
 
-            return function;
+
         }
 
         public async Task<ServiceResult<FunctionResult>> Create(FunctionRequest request)
@@ -48,19 +47,22 @@ namespace PeopleManager.Services
 
             var functionResult = await Get(function.Id);
 
-            return new ServiceResult<FunctionResult>
-            {
-                Data = functionResult
-            };
+            return new ServiceResult<FunctionResult>(functionResult);
+            
         }
 
-        public async Task<FunctionResult?> Update(int id, FunctionRequest request)
+        public async Task<ServiceResult<FunctionResult>> Update(int id, FunctionRequest request)
         {
             var function = await dbContext.Functions.FirstOrDefaultAsync(f => f.Id == id);
 
             if (function == null)
             {
-                return null;
+                return new ServiceResult<FunctionResult>().NotFound();
+            }
+            if (string.IsNullOrWhiteSpace(request.Name))
+            {
+                return new ServiceResult<FunctionResult>().Required(nameof(request.Name));
+
             }
 
             function.Name = request.Name;
@@ -68,7 +70,9 @@ namespace PeopleManager.Services
 
             await dbContext.SaveChangesAsync();
 
-            return await Get(function.Id);
+            return new ServiceResult<FunctionResult>(await Get(function.Id));
+
+
         }
 
         public async Task<ServiceResult> Delete(int id)

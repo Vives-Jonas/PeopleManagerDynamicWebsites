@@ -1,7 +1,9 @@
+using Azure.Core;
 using JetBrains.Annotations;
 using Microsoft.AspNetCore.Mvc;
 using PeopleManager.Dto.Requests;
 using PeopleManager.Sdk;
+using PeopleManager.Ui.Mvc.Extensions;
 
 namespace PeopleManager.Ui.Mvc.Controllers;
 
@@ -30,8 +32,12 @@ public class PeopleController(PersonClient personClient, FunctionClient function
         {
             return await CreateView("Create", request);
         }
-        await personClient.Create(request);
-
+        var result = await personClient.Create(request);
+        if (!result.IsSuccess)
+        {
+            ModelState.AddServiceMessages(result.Messages);
+            return await CreateView("Create", request);
+        }
         return RedirectToAction("Index");
     }
 
@@ -63,7 +69,14 @@ public class PeopleController(PersonClient personClient, FunctionClient function
             return await CreateView("Edit", request);
         }
 
-        await personClient.Update(id, request);
+        
+        var result = await personClient.Update(id, request);
+
+        if (!result.IsSuccess)
+        {
+            ModelState.AddServiceMessages(result.Messages);
+            return await CreateView("Edit", request);
+        }
 
         return RedirectToAction("Index");
     }
@@ -75,7 +88,12 @@ public class PeopleController(PersonClient personClient, FunctionClient function
     [Route("[controller]/Delete/{id:int?}")]
     public async Task<IActionResult> Delete(int id)
     {
-        await personClient.Delete(id);
+        var result = await personClient.Delete(id);
+        if (!result.IsSuccess)
+        {
+            ModelState.AddServiceMessages(result.Messages);
+            return View();
+        }
 
         return RedirectToAction("Index");
     }

@@ -1,6 +1,7 @@
 ﻿using PeopleManager.Dto.Results;
 using System.Net.Http.Json;
 using PeopleManager.Dto.Requests;
+using Vives.Services.Model;
 
 namespace PeopleManager.Sdk
 {
@@ -27,32 +28,37 @@ namespace PeopleManager.Sdk
             return result;
         }
 
-        public async Task<FunctionResult?> Create(FunctionRequest request)
+        public async Task<ServiceResult<FunctionResult>> Create(FunctionRequest request)
         {
             var httpClient = httpClientFactory.CreateClient("PeopleManagerApi");
             var response = await httpClient.PostAsJsonAsync("functions", request);
             response.EnsureSuccessStatusCode();
 
-            var result = await response.Content.ReadFromJsonAsync<FunctionResult>();
-            return result;
+            var result = await response.Content.ReadFromJsonAsync<ServiceResult<FunctionResult>>();
+            return result ?? new ServiceResult<FunctionResult>();
         }
 
-        public async Task<FunctionResult?> Update(int id, FunctionRequest request)
+        public async Task<ServiceResult<FunctionResult>> Update(int id, FunctionRequest request)
         {
             var httpClient = httpClientFactory.CreateClient("PeopleManagerApi");
             var response = await httpClient.PutAsJsonAsync($"functions/{id}", request);
             response.EnsureSuccessStatusCode();
 
-            var result = await response.Content.ReadFromJsonAsync<FunctionResult>();
-            return result;
+            var result = await response.Content.ReadFromJsonAsync<ServiceResult<FunctionResult>>();
+            return result ?? new ServiceResult<FunctionResult>();
         }
 
-        public async Task Delete(int id)
+        public async Task<ServiceResult> Delete(int id)
         {
             var httpClient = httpClientFactory.CreateClient("PeopleManagerApi");
             var response = await httpClient.DeleteAsync($"functions/{id}");
             response.EnsureSuccessStatusCode();
 
+            
+            return new ServiceResult
+            {
+
+            };
         }
     }
 }
