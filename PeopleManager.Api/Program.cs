@@ -1,47 +1,32 @@
 using Microsoft.EntityFrameworkCore;
+using PeopleManager.Api.Installers;
 using PeopleManager.Repository;
-using PeopleManager.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 // Add services to the container.
 
-
-builder.Services.AddControllers();
-
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-
-
-//Add Swagger
-builder.Services.AddSwaggerGen();
-
-
-//var connectionString = builder.Configuration.GetConnectionString(nameof(PeopleManagerDbContext));
-
-builder.Services.AddDbContext<PeopleManagerDbContext>(options =>
-{
-    options.UseInMemoryDatabase(nameof(PeopleManagerDbContext));
-    //options.UseSqlServer(connectionString);
-});
-
-
-
-builder.Services.AddScoped<FunctionService>();
-builder.Services.AddScoped<PersonService>();
-
+//Use databaseInstaller and swaggerInstaller and servicesInstaller and ApiInstaller and authenticationInstaller and IdentityInstaller
+//via chaining door return (van WebApplicationBuilder) in de extension method
+builder
+    .InstallApi()
+    .InstallSwagger()
+    .InstallDatabase()
+    .InstallServices()
+    .InstallAuthentication()
+    .InstallIdentity();
 
 var app = builder.Build();
-
 
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.MapOpenApi();
     app.UseSwagger();
     app.UseSwaggerUI();
-    app.MapOpenApi();
+    
     
     using var scope = app.Services.CreateScope();
 
@@ -50,11 +35,11 @@ if (app.Environment.IsDevelopment())
     {
        await dbContext.Seed();
     }
-    
 }
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

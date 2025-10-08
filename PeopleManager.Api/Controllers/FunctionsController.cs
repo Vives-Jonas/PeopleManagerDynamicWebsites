@@ -1,17 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PeopleManager.Dto.Requests;
 using PeopleManager.Services;
 
 namespace PeopleManager.Api.Controllers
 {
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class FunctionsController(FunctionService functionService) : ControllerBase
+    public class FunctionsController(FunctionService functionService, ILogger<FunctionsController> logger) : ControllerBase
     {
         //FIND
         [HttpGet]
         public async Task<IActionResult> Find()
         {
+            logger.LogInformation("Find endpoint called");
             var result = await functionService.Find();
             return Ok(result);
         }
