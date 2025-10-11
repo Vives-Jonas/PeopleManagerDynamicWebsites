@@ -5,11 +5,13 @@ using PeopleManager.Services;
 
 namespace PeopleManager.Api.Controllers
 {
-    //[Authorize]
+    
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class FunctionsController(FunctionService functionService, ILogger<FunctionsController> logger) : ControllerBase
     {
+        
         //FIND
         [HttpGet]
         public async Task<IActionResult> Find()

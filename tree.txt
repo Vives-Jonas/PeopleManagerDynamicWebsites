@@ -1,0 +1,866 @@
+Folder PATH listing for volume Windows
+Volume serial number is 2C7C-2803
+C:.
+|   .gitattributes
+|   .gitignore
+|   PeopleManager.sln
+|   PeopleManager.slnLaunch.user
+|   tree.txt
+|   
++---.github
+|   \---workflows
++---PeopleManager.Api
+|   |   appsettings.Development.json
+|   |   appsettings.json
+|   |   PeopleManager.Api.csproj
+|   |   PeopleManager.Api.csproj.user
+|   |   PeopleManager.Api.http
+|   |   Program.cs
+|   |   
+|   +---bin
+|   |   \---Debug
+|   |       \---net9.0
+|   |               appsettings.Development.json
+|   |               appsettings.json
+|   |               Microsoft.AspNetCore.Authentication.JwtBearer.dll
+|   |               Microsoft.AspNetCore.Cryptography.Internal.dll
+|   |               Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+|   |               Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+|   |               Microsoft.AspNetCore.OpenApi.dll
+|   |               Microsoft.EntityFrameworkCore.Abstractions.dll
+|   |               Microsoft.EntityFrameworkCore.dll
+|   |               Microsoft.EntityFrameworkCore.InMemory.dll
+|   |               Microsoft.EntityFrameworkCore.Relational.dll
+|   |               Microsoft.Extensions.Caching.Abstractions.dll
+|   |               Microsoft.Extensions.Caching.Memory.dll
+|   |               Microsoft.Extensions.Configuration.Abstractions.dll
+|   |               Microsoft.Extensions.DependencyInjection.Abstractions.dll
+|   |               Microsoft.Extensions.DependencyInjection.dll
+|   |               Microsoft.Extensions.Identity.Core.dll
+|   |               Microsoft.Extensions.Identity.Stores.dll
+|   |               Microsoft.Extensions.Logging.Abstractions.dll
+|   |               Microsoft.Extensions.Logging.dll
+|   |               Microsoft.Extensions.Options.dll
+|   |               Microsoft.Extensions.Primitives.dll
+|   |               Microsoft.IdentityModel.Abstractions.dll
+|   |               Microsoft.IdentityModel.JsonWebTokens.dll
+|   |               Microsoft.IdentityModel.Logging.dll
+|   |               Microsoft.IdentityModel.Protocols.dll
+|   |               Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+|   |               Microsoft.IdentityModel.Tokens.dll
+|   |               Microsoft.OpenApi.dll
+|   |               PeopleManager.Api.deps.json
+|   |               PeopleManager.Api.dll
+|   |               PeopleManager.Api.exe
+|   |               PeopleManager.Api.pdb
+|   |               PeopleManager.Api.runtimeconfig.json
+|   |               PeopleManager.Api.staticwebassets.endpoints.json
+|   |               PeopleManager.Dto.dll
+|   |               PeopleManager.Dto.pdb
+|   |               PeopleManager.Model.dll
+|   |               PeopleManager.Model.pdb
+|   |               PeopleManager.Repository.dll
+|   |               PeopleManager.Repository.pdb
+|   |               PeopleManager.Services.dll
+|   |               PeopleManager.Services.pdb
+|   |               Swashbuckle.AspNetCore.Swagger.dll
+|   |               Swashbuckle.AspNetCore.SwaggerGen.dll
+|   |               Swashbuckle.AspNetCore.SwaggerUI.dll
+|   |               System.IdentityModel.Tokens.Jwt.dll
+|   |               Vives.Services.Model.dll
+|   |               Vives.Services.Model.pdb
+|   |               
+|   +---Controllers
+|   |       FunctionsController.cs
+|   |       IdentityController.cs
+|   |       PeopleController.cs
+|   |       
+|   +---Installers
+|   |       ApiInstaller.cs
+|   |       AuthenticationInstaller.cs
+|   |       DatabaseInstaller.cs
+|   |       IdentityInstaller.cs
+|   |       ServicesInstaller.cs
+|   |       SwaggerInstaller.cs
+|   |       
+|   +---obj
+|   |   |   PeopleManager.Api.csproj.nuget.dgspec.json
+|   |   |   PeopleManager.Api.csproj.nuget.g.props
+|   |   |   PeopleManager.Api.csproj.nuget.g.targets
+|   |   |   project.assets.json
+|   |   |   project.nuget.cache
+|   |   |   
+|   |   \---Debug
+|   |       \---net9.0
+|   |           |   .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+|   |           |   ApiEndpoints.json
+|   |           |   apphost.exe
+|   |           |   PeopleMa.D46A266B.Up2Date
+|   |           |   PeopleManager.Api.AssemblyInfo.cs
+|   |           |   PeopleManager.Api.AssemblyInfoInputs.cache
+|   |           |   PeopleManager.Api.assets.cache
+|   |           |   PeopleManager.Api.csproj.AssemblyReference.cache
+|   |           |   PeopleManager.Api.csproj.BuildWithSkipAnalyzers
+|   |           |   PeopleManager.Api.csproj.CoreCompileInputs.cache
+|   |           |   PeopleManager.Api.csproj.FileListAbsolute.txt
+|   |           |   PeopleManager.Api.dll
+|   |           |   PeopleManager.Api.GeneratedMSBuildEditorConfig.editorconfig
+|   |           |   PeopleManager.Api.genruntimeconfig.cache
+|   |           |   PeopleManager.Api.GlobalUsings.g.cs
+|   |           |   PeopleManager.Api.MvcApplicationPartsAssemblyInfo.cache
+|   |           |   PeopleManager.Api.MvcApplicationPartsAssemblyInfo.cs
+|   |           |   PeopleManager.Api.pdb
+|   |           |   PeopleManager.Api.sourcelink.json
+|   |           |   rjsmcshtml.dswa.cache.json
+|   |           |   rjsmrazor.dswa.cache.json
+|   |           |   rpswa.dswa.cache.json
+|   |           |   staticwebassets.build.endpoints.json
+|   |           |   staticwebassets.build.json
+|   |           |   staticwebassets.build.json.cache
+|   |           |   staticwebassets.references.upToDateCheck.txt
+|   |           |   staticwebassets.removed.txt
+|   |           |   
+|   |           +---ref
+|   |           |       PeopleManager.Api.dll
+|   |           |       
+|   |           +---refint
+|   |           |       PeopleManager.Api.dll
+|   |           |       
+|   |           \---staticwebassets
+|   +---Properties
+|   |       launchSettings.json
+|   |       
+|   +---Services
+|   |       AuthenticationManager.cs
+|   |       
+|   \---Settings
+|           JwtSettings.cs
+|           
++---PeopleManager.Dto
+|   |   PeopleManager.Dto.csproj
+|   |   
+|   +---bin
+|   |   \---Debug
+|   |       \---net9.0
+|   |               PeopleManager.Dto.deps.json
+|   |               PeopleManager.Dto.dll
+|   |               PeopleManager.Dto.pdb
+|   |               Vives.Services.Model.dll
+|   |               Vives.Services.Model.pdb
+|   |               
+|   +---obj
+|   |   |   PeopleManager.Dto.csproj.nuget.dgspec.json
+|   |   |   PeopleManager.Dto.csproj.nuget.g.props
+|   |   |   PeopleManager.Dto.csproj.nuget.g.targets
+|   |   |   project.assets.json
+|   |   |   project.nuget.cache
+|   |   |   
+|   |   \---Debug
+|   |       \---net9.0
+|   |           |   .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+|   |           |   PeopleMa.993480D4.Up2Date
+|   |           |   PeopleManager.Dto.AssemblyInfo.cs
+|   |           |   PeopleManager.Dto.AssemblyInfoInputs.cache
+|   |           |   PeopleManager.Dto.assets.cache
+|   |           |   PeopleManager.Dto.csproj.AssemblyReference.cache
+|   |           |   PeopleManager.Dto.csproj.BuildWithSkipAnalyzers
+|   |           |   PeopleManager.Dto.csproj.CoreCompileInputs.cache
+|   |           |   PeopleManager.Dto.csproj.FileListAbsolute.txt
+|   |           |   PeopleManager.Dto.dll
+|   |           |   PeopleManager.Dto.GeneratedMSBuildEditorConfig.editorconfig
+|   |           |   PeopleManager.Dto.GlobalUsings.g.cs
+|   |           |   PeopleManager.Dto.pdb
+|   |           |   PeopleManager.Dto.sourcelink.json
+|   |           |   
+|   |           +---ref
+|   |           |       PeopleManager.Dto.dll
+|   |           |       
+|   |           \---refint
+|   |                   PeopleManager.Dto.dll
+|   |                   
+|   +---Requests
+|   |       FunctionRequest.cs
+|   |       PersonRequest.cs
+|   |       RegisterRequest.cs
+|   |       SignInRequest.cs
+|   |       
+|   \---Results
+|           AuthenticationResult.cs
+|           FunctionResult.cs
+|           PersonResult.cs
+|           
++---PeopleManager.Model
+|   |   Function.cs
+|   |   PeopleManager.Model.csproj
+|   |   Person.cs
+|   |   
+|   +---bin
+|   |   \---Debug
+|   |       \---net9.0
+|   |               PeopleManager.Model.deps.json
+|   |               PeopleManager.Model.dll
+|   |               PeopleManager.Model.pdb
+|   |               
+|   \---obj
+|       |   PeopleManager.Model.csproj.nuget.dgspec.json
+|       |   PeopleManager.Model.csproj.nuget.g.props
+|       |   PeopleManager.Model.csproj.nuget.g.targets
+|       |   project.assets.json
+|       |   project.nuget.cache
+|       |   
+|       \---Debug
+|           \---net9.0
+|               |   .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+|               |   PeopleManager.Model.AssemblyInfo.cs
+|               |   PeopleManager.Model.AssemblyInfoInputs.cache
+|               |   PeopleManager.Model.assets.cache
+|               |   PeopleManager.Model.csproj.BuildWithSkipAnalyzers
+|               |   PeopleManager.Model.csproj.CoreCompileInputs.cache
+|               |   PeopleManager.Model.csproj.FileListAbsolute.txt
+|               |   PeopleManager.Model.dll
+|               |   PeopleManager.Model.GeneratedMSBuildEditorConfig.editorconfig
+|               |   PeopleManager.Model.GlobalUsings.g.cs
+|               |   PeopleManager.Model.pdb
+|               |   PeopleManager.Model.sourcelink.json
+|               |   
+|               +---ref
+|               |       PeopleManager.Model.dll
+|               |       
+|               \---refint
+|                       PeopleManager.Model.dll
+|                       
++---PeopleManager.Repository
+|   |   PeopleManager.Repository.csproj
+|   |   PeopleManagerDbContext.cs
+|   |   
+|   +---bin
+|   |   \---Debug
+|   |       \---net9.0
+|   |               PeopleManager.Model.dll
+|   |               PeopleManager.Model.pdb
+|   |               PeopleManager.Repository.deps.json
+|   |               PeopleManager.Repository.dll
+|   |               PeopleManager.Repository.pdb
+|   |               
+|   \---obj
+|       |   PeopleManager.Repository.csproj.nuget.dgspec.json
+|       |   PeopleManager.Repository.csproj.nuget.g.props
+|       |   PeopleManager.Repository.csproj.nuget.g.targets
+|       |   project.assets.json
+|       |   project.nuget.cache
+|       |   
+|       \---Debug
+|           \---net9.0
+|               |   .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+|               |   PeopleMa.0EFB238E.Up2Date
+|               |   PeopleManager.Repository.AssemblyInfo.cs
+|               |   PeopleManager.Repository.AssemblyInfoInputs.cache
+|               |   PeopleManager.Repository.assets.cache
+|               |   PeopleManager.Repository.csproj.AssemblyReference.cache
+|               |   PeopleManager.Repository.csproj.BuildWithSkipAnalyzers
+|               |   PeopleManager.Repository.csproj.CoreCompileInputs.cache
+|               |   PeopleManager.Repository.csproj.FileListAbsolute.txt
+|               |   PeopleManager.Repository.dll
+|               |   PeopleManager.Repository.GeneratedMSBuildEditorConfig.editorconfig
+|               |   PeopleManager.Repository.GlobalUsings.g.cs
+|               |   PeopleManager.Repository.pdb
+|               |   PeopleManager.Repository.sourcelink.json
+|               |   
+|               +---ref
+|               |       PeopleManager.Repository.dll
+|               |       
+|               \---refint
+|                       PeopleManager.Repository.dll
+|                       
++---PeopleManager.Sdk
+|   |   FunctionClient.cs
+|   |   PeopleManager.Sdk.csproj
+|   |   PersonClient.cs
+|   |   
+|   +---bin
+|   |   \---Debug
+|   |       \---net9.0
+|   |               PeopleManager.Dto.dll
+|   |               PeopleManager.Dto.pdb
+|   |               PeopleManager.Sdk.deps.json
+|   |               PeopleManager.Sdk.dll
+|   |               PeopleManager.Sdk.pdb
+|   |               Vives.Services.Model.dll
+|   |               Vives.Services.Model.pdb
+|   |               
+|   \---obj
+|       |   PeopleManager.Sdk.csproj.nuget.dgspec.json
+|       |   PeopleManager.Sdk.csproj.nuget.g.props
+|       |   PeopleManager.Sdk.csproj.nuget.g.targets
+|       |   project.assets.json
+|       |   project.nuget.cache
+|       |   
+|       \---Debug
+|           \---net9.0
+|               |   .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+|               |   PeopleMa.4C69870F.Up2Date
+|               |   PeopleManager.Sdk.AssemblyInfo.cs
+|               |   PeopleManager.Sdk.AssemblyInfoInputs.cache
+|               |   PeopleManager.Sdk.assets.cache
+|               |   PeopleManager.Sdk.csproj.AssemblyReference.cache
+|               |   PeopleManager.Sdk.csproj.BuildWithSkipAnalyzers
+|               |   PeopleManager.Sdk.csproj.CoreCompileInputs.cache
+|               |   PeopleManager.Sdk.csproj.FileListAbsolute.txt
+|               |   PeopleManager.Sdk.dll
+|               |   PeopleManager.Sdk.GeneratedMSBuildEditorConfig.editorconfig
+|               |   PeopleManager.Sdk.GlobalUsings.g.cs
+|               |   PeopleManager.Sdk.pdb
+|               |   PeopleManager.Sdk.sourcelink.json
+|               |   
+|               +---ref
+|               |       PeopleManager.Sdk.dll
+|               |       
+|               \---refint
+|                       PeopleManager.Sdk.dll
+|                       
++---PeopleManager.Services
+|   |   FunctionService.cs
+|   |   IdentityService.cs
+|   |   PeopleManager.Services.csproj
+|   |   PersonService.cs
+|   |   
+|   +---bin
+|   |   \---Debug
+|   |       \---net9.0
+|   |               PeopleManager.Dto.dll
+|   |               PeopleManager.Dto.pdb
+|   |               PeopleManager.Model.dll
+|   |               PeopleManager.Model.pdb
+|   |               PeopleManager.Repository.dll
+|   |               PeopleManager.Repository.pdb
+|   |               PeopleManager.Services.deps.json
+|   |               PeopleManager.Services.dll
+|   |               PeopleManager.Services.pdb
+|   |               Vives.Services.Model.dll
+|   |               Vives.Services.Model.pdb
+|   |               
+|   +---Extensions
+|   |       AuthenticationResultExtensions.cs
+|   |       ProjectionExtensions.cs
+|   |       
+|   \---obj
+|       |   PeopleManager.Services.csproj.nuget.dgspec.json
+|       |   PeopleManager.Services.csproj.nuget.g.props
+|       |   PeopleManager.Services.csproj.nuget.g.targets
+|       |   project.assets.json
+|       |   project.nuget.cache
+|       |   
+|       \---Debug
+|           \---net9.0
+|               |   .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+|               |   PeopleMa.73923F01.Up2Date
+|               |   PeopleManager.Services.AssemblyInfo.cs
+|               |   PeopleManager.Services.AssemblyInfoInputs.cache
+|               |   PeopleManager.Services.assets.cache
+|               |   PeopleManager.Services.csproj.AssemblyReference.cache
+|               |   PeopleManager.Services.csproj.BuildWithSkipAnalyzers
+|               |   PeopleManager.Services.csproj.CoreCompileInputs.cache
+|               |   PeopleManager.Services.csproj.FileListAbsolute.txt
+|               |   PeopleManager.Services.dll
+|               |   PeopleManager.Services.GeneratedMSBuildEditorConfig.editorconfig
+|               |   PeopleManager.Services.GlobalUsings.g.cs
+|               |   PeopleManager.Services.pdb
+|               |   PeopleManager.Services.sourcelink.json
+|               |   
+|               +---ref
+|               |       PeopleManager.Services.dll
+|               |       
+|               \---refint
+|                       PeopleManager.Services.dll
+|                       
++---PeopleManager.Ui.Mvc
+|   |   appsettings.Development.json
+|   |   appsettings.json
+|   |   PeopleManager.Ui.Mvc.csproj
+|   |   PeopleManager.Ui.Mvc.csproj.user
+|   |   Program.cs
+|   |   
+|   +---bin
+|   |   \---Debug
+|   |       \---net9.0
+|   |           |   appsettings.Development.json
+|   |           |   appsettings.json
+|   |           |   Azure.Core.dll
+|   |           |   Azure.Identity.dll
+|   |           |   JetBrains.Annotations.dll
+|   |           |   Microsoft.AspNetCore.Cryptography.Internal.dll
+|   |           |   Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+|   |           |   Microsoft.AspNetCore.Identity.UI.dll
+|   |           |   Microsoft.Bcl.AsyncInterfaces.dll
+|   |           |   Microsoft.Data.SqlClient.dll
+|   |           |   Microsoft.EntityFrameworkCore.Abstractions.dll
+|   |           |   Microsoft.EntityFrameworkCore.dll
+|   |           |   Microsoft.EntityFrameworkCore.InMemory.dll
+|   |           |   Microsoft.EntityFrameworkCore.Relational.dll
+|   |           |   Microsoft.EntityFrameworkCore.SqlServer.dll
+|   |           |   Microsoft.Extensions.Caching.Abstractions.dll
+|   |           |   Microsoft.Extensions.Caching.Memory.dll
+|   |           |   Microsoft.Extensions.Configuration.Abstractions.dll
+|   |           |   Microsoft.Extensions.Configuration.Binder.dll
+|   |           |   Microsoft.Extensions.Configuration.dll
+|   |           |   Microsoft.Extensions.DependencyInjection.Abstractions.dll
+|   |           |   Microsoft.Extensions.DependencyInjection.dll
+|   |           |   Microsoft.Extensions.Diagnostics.Abstractions.dll
+|   |           |   Microsoft.Extensions.Diagnostics.dll
+|   |           |   Microsoft.Extensions.FileProviders.Abstractions.dll
+|   |           |   Microsoft.Extensions.FileProviders.Embedded.dll
+|   |           |   Microsoft.Extensions.Http.dll
+|   |           |   Microsoft.Extensions.Identity.Core.dll
+|   |           |   Microsoft.Extensions.Identity.Stores.dll
+|   |           |   Microsoft.Extensions.Logging.Abstractions.dll
+|   |           |   Microsoft.Extensions.Logging.dll
+|   |           |   Microsoft.Extensions.Options.ConfigurationExtensions.dll
+|   |           |   Microsoft.Extensions.Options.dll
+|   |           |   Microsoft.Extensions.Primitives.dll
+|   |           |   Microsoft.Identity.Client.dll
+|   |           |   Microsoft.Identity.Client.Extensions.Msal.dll
+|   |           |   Microsoft.IdentityModel.Abstractions.dll
+|   |           |   Microsoft.IdentityModel.JsonWebTokens.dll
+|   |           |   Microsoft.IdentityModel.Logging.dll
+|   |           |   Microsoft.IdentityModel.Protocols.dll
+|   |           |   Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+|   |           |   Microsoft.IdentityModel.Tokens.dll
+|   |           |   Microsoft.SqlServer.Server.dll
+|   |           |   Microsoft.Win32.SystemEvents.dll
+|   |           |   PeopleManager.Dto.dll
+|   |           |   PeopleManager.Dto.pdb
+|   |           |   PeopleManager.Sdk.dll
+|   |           |   PeopleManager.Sdk.pdb
+|   |           |   PeopleManager.Ui.Mvc.deps.json
+|   |           |   PeopleManager.Ui.Mvc.dll
+|   |           |   PeopleManager.Ui.Mvc.exe
+|   |           |   PeopleManager.Ui.Mvc.pdb
+|   |           |   PeopleManager.Ui.Mvc.runtimeconfig.json
+|   |           |   PeopleManager.Ui.Mvc.staticwebassets.endpoints.json
+|   |           |   PeopleManager.Ui.Mvc.staticwebassets.runtime.json
+|   |           |   System.ClientModel.dll
+|   |           |   System.Configuration.ConfigurationManager.dll
+|   |           |   System.Drawing.Common.dll
+|   |           |   System.IdentityModel.Tokens.Jwt.dll
+|   |           |   System.Memory.Data.dll
+|   |           |   System.Runtime.Caching.dll
+|   |           |   System.Security.Cryptography.ProtectedData.dll
+|   |           |   System.Security.Permissions.dll
+|   |           |   System.Windows.Extensions.dll
+|   |           |   Vives.Services.Model.dll
+|   |           |   Vives.Services.Model.pdb
+|   |           |   
+|   |           \---runtimes
+|   |               +---unix
+|   |               |   \---lib
+|   |               |       \---net6.0
+|   |               |               Microsoft.Data.SqlClient.dll
+|   |               |               System.Drawing.Common.dll
+|   |               |               
+|   |               +---win
+|   |               |   \---lib
+|   |               |       \---net6.0
+|   |               |               Microsoft.Data.SqlClient.dll
+|   |               |               Microsoft.Win32.SystemEvents.dll
+|   |               |               System.Drawing.Common.dll
+|   |               |               System.Runtime.Caching.dll
+|   |               |               System.Security.Cryptography.ProtectedData.dll
+|   |               |               System.Windows.Extensions.dll
+|   |               |               
+|   |               +---win-arm
+|   |               |   \---native
+|   |               |           Microsoft.Data.SqlClient.SNI.dll
+|   |               |           
+|   |               +---win-arm64
+|   |               |   \---native
+|   |               |           Microsoft.Data.SqlClient.SNI.dll
+|   |               |           
+|   |               +---win-x64
+|   |               |   \---native
+|   |               |           Microsoft.Data.SqlClient.SNI.dll
+|   |               |           
+|   |               \---win-x86
+|   |                   \---native
+|   |                           Microsoft.Data.SqlClient.SNI.dll
+|   |                           
+|   +---Controllers
+|   |       FunctionsController.cs
+|   |       HomeController.cs
+|   |       IdentityController.cs
+|   |       PeopleController.cs
+|   |       
+|   +---Extensions
+|   |       ModelStateExtensions.cs
+|   |       StringExtensions.cs
+|   |       
+|   +---Models
+|   |       ErrorViewModel.cs
+|   |       RegisterModel.cs
+|   |       SignInModel.cs
+|   |       
+|   +---obj
+|   |   |   PeopleManager.Ui.Mvc.csproj.nuget.dgspec.json
+|   |   |   PeopleManager.Ui.Mvc.csproj.nuget.g.props
+|   |   |   PeopleManager.Ui.Mvc.csproj.nuget.g.targets
+|   |   |   project.assets.json
+|   |   |   project.nuget.cache
+|   |   |   
+|   |   \---Debug
+|   |       \---net9.0
+|   |           |   .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+|   |           |   ApiEndpoints.json
+|   |           |   apphost.exe
+|   |           |   PeopleMa.C8118000.Up2Date
+|   |           |   PeopleManager.Ui.Mvc.AssemblyInfo.cs
+|   |           |   PeopleManager.Ui.Mvc.AssemblyInfoInputs.cache
+|   |           |   PeopleManager.Ui.Mvc.assets.cache
+|   |           |   PeopleManager.Ui.Mvc.csproj.AssemblyReference.cache
+|   |           |   PeopleManager.Ui.Mvc.csproj.BuildWithSkipAnalyzers
+|   |           |   PeopleManager.Ui.Mvc.csproj.CoreCompileInputs.cache
+|   |           |   PeopleManager.Ui.Mvc.csproj.FileListAbsolute.txt
+|   |           |   PeopleManager.Ui.Mvc.dll
+|   |           |   PeopleManager.Ui.Mvc.GeneratedMSBuildEditorConfig.editorconfig
+|   |           |   PeopleManager.Ui.Mvc.genruntimeconfig.cache
+|   |           |   PeopleManager.Ui.Mvc.GlobalUsings.g.cs
+|   |           |   PeopleManager.Ui.Mvc.MvcApplicationPartsAssemblyInfo.cache
+|   |           |   PeopleManager.Ui.Mvc.MvcApplicationPartsAssemblyInfo.cs
+|   |           |   PeopleManager.Ui.Mvc.pdb
+|   |           |   PeopleManager.Ui.Mvc.RazorAssemblyInfo.cache
+|   |           |   PeopleManager.Ui.Mvc.RazorAssemblyInfo.cs
+|   |           |   PeopleManager.Ui.Mvc.sourcelink.json
+|   |           |   rbcswa.dswa.cache.json
+|   |           |   rjimswa.dswa.cache.json
+|   |           |   rjsmcshtml.dswa.cache.json
+|   |           |   rjsmrazor.dswa.cache.json
+|   |           |   rpswa.dswa.cache.json
+|   |           |   staticwebassets.build.endpoints.json
+|   |           |   staticwebassets.build.json
+|   |           |   staticwebassets.build.json.cache
+|   |           |   staticwebassets.development.json
+|   |           |   staticwebassets.references.upToDateCheck.txt
+|   |           |   staticwebassets.removed.txt
+|   |           |   staticwebassets.upToDateCheck.txt
+|   |           |   
+|   |           +---compressed
+|   |           |       0b1xy6xli2-ft3s53vfgj.gz
+|   |           |       0k1i85ntyh-6cfz1n2cew.gz
+|   |           |       14ipv7q33s-bqjiyaj88i.gz
+|   |           |       1fc4q00scq-khv3u5hwcm.gz
+|   |           |       2tikzqlmtu-ag7o75518u.gz
+|   |           |       37lpi0guf2-j5mq2jizvt.gz
+|   |           |       39ior7e3i4-pj5nd1wqec.gz
+|   |           |       3pqmrc5se1-u9q1upor1n.gz
+|   |           |       3tzsqhslk9-ub07r2b239.gz
+|   |           |       47012z8l2l-pj5nd1wqec.gz
+|   |           |       4vzefxwp2m-46ein0sx1k.gz
+|   |           |       4ymrbcw3tj-356vix0kms.gz
+|   |           |       57xf6b5bpd-c63t5i9ira.gz
+|   |           |       586fccgpxj-hrwsygsryq.gz
+|   |           |       5gv6db52id-tmc1g35s3z.gz
+|   |           |       5jbluqo2xa-03hjc8e09r.gz
+|   |           |       5stuyt3wge-d6nrnj6jjx.gz
+|   |           |       6fj25eu5mo-hd3gran6i8.gz
+|   |           |       6p6h5ab1i1-gk0pw8i4co.gz
+|   |           |       7fr2c4y7bo-aexeepp0ev.gz
+|   |           |       7o8oyvng68-tdbxkamptv.gz
+|   |           |       8axix7wldr-fsbi9cje9m.gz
+|   |           |       8jdotjxnms-4094rpi4f9.gz
+|   |           |       8xykfy6qmd-r4e9w2rdcm.gz
+|   |           |       9glsckmvxo-aexeepp0ev.gz
+|   |           |       9muusbdg0a-x0q3zqp4vz.gz
+|   |           |       a3ygkwa5zy-2z0ns9nrw6.gz
+|   |           |       aqzpx2ito0-y7v9cxd14o.gz
+|   |           |       aysfe9xkae-kbrnm935zg.gz
+|   |           |       b0l567tvy8-61n19gt1b8.gz
+|   |           |       b9lhb08218-ttgo8qnofa.gz
+|   |           |       bh4v3mdph9-v0zj4ognzu.gz
+|   |           |       bww8ud00yd-ausgxo2sd3.gz
+|   |           |       chfxfzzrvl-0j3bgjxly4.gz
+|   |           |       cynp17w084-c2oey78nd0.gz
+|   |           |       d5z9sfpxbi-rzd6atqjts.gz
+|   |           |       dgjwim5jj3-iovd86k7lj.gz
+|   |           |       dtz1v3et0j-xvp3kq03qx.gz
+|   |           |       dy3tpj9x2n-qesaa3a1fm.gz
+|   |           |       dzftabhg63-sejl45xvog.gz
+|   |           |       e7vylmsd3v-jd9uben2k1.gz
+|   |           |       eb27mqwgz2-erw9l3u2r3.gz
+|   |           |       edcrak57d7-k8d9w2qqmf.gz
+|   |           |       enkl7vek2m-ee0r1s7dh0.gz
+|   |           |       f038t4i9sk-8vyfqsqgz1.gz
+|   |           |       fcgawgkvay-48y08845bh.gz
+|   |           |       fkxyw2zwqs-b9sayid5wm.gz
+|   |           |       gv0qnsjax6-ttgo8qnofa.gz
+|   |           |       h7rpcqjslh-worgj0nhwm.gz
+|   |           |       h9vwtoirpy-j5mq2jizvt.gz
+|   |           |       hh8ihyobdx-d7shbmvgxk.gz
+|   |           |       higufxz8op-vr1egmr9el.gz
+|   |           |       htppucrvs3-fsbi9cje9m.gz
+|   |           |       i7q5dp7drx-lxl2n7777f.gz
+|   |           |       ib8sjvs76k-gye83jo8yx.gz
+|   |           |       igscs4x0yk-h1s4sie4z3.gz
+|   |           |       iilb7zw1ch-t1cqhe9u97.gz
+|   |           |       imet6yq0kt-c2oey78nd0.gz
+|   |           |       ivy2s9gwh5-iovd86k7lj.gz
+|   |           |       iznc766avz-nvvlpmu67g.gz
+|   |           |       j3hwsq15kh-47otxtyo56.gz
+|   |           |       j9swiz3yzq-90yqlj465b.gz
+|   |           |       jcdv5re0g1-lxl2n7777f.gz
+|   |           |       k8b25g0zwc-b7pk76d08c.gz
+|   |           |       kw5dv7uugo-22vffe00uq.gz
+|   |           |       kwb1eu12ll-zub09dkrxp.gz
+|   |           |       l186vlgaag-37tfw0ft22.gz
+|   |           |       ldxy2n3w6q-356vix0kms.gz
+|   |           |       loe9cvmuxe-xtxxf3hu2r.gz
+|   |           |       lr5hmrr0j7-493y06b0oq.gz
+|   |           |       m0nlrcklsj-c2jlpeoesf.gz
+|   |           |       nezrqnk58p-muycvpuwrr.gz
+|   |           |       nlrl0f3xs3-jd9uben2k1.gz
+|   |           |       ns4583i71s-s35ty4nyc5.gz
+|   |           |       o5k23vqhrk-06098lyss8.gz
+|   |           |       o9tb1xkedk-m9qm4tazc0.gz
+|   |           |       oa028blh6g-r4e9w2rdcm.gz
+|   |           |       ofa40bqe71-b9sayid5wm.gz
+|   |           |       oizb0yr7bb-keugtjm085.gz
+|   |           |       oxk5o6czdw-fvhpjtyr6v.gz
+|   |           |       pg0kfrfie3-d4r6k3f320.gz
+|   |           |       pogzkicjpz-0j3bgjxly4.gz
+|   |           |       q3naettu8c-4v8eqarkd7.gz
+|   |           |       qfr28sqcy1-ft3s53vfgj.gz
+|   |           |       qtplubb652-ynyaa8k90p.gz
+|   |           |       r2ge8r48sm-ausgxo2sd3.gz
+|   |           |       rh65p086id-c2jlpeoesf.gz
+|   |           |       ri2zzfd51h-9vr69e8ynj.gz
+|   |           |       rpfizhaidw-ltid2c489k.gz
+|   |           |       rpr6qdwlpg-fvhpjtyr6v.gz
+|   |           |       rsc7qacj1u-hrwsygsryq.gz
+|   |           |       rxeh7ahyt4-h1s4sie4z3.gz
+|   |           |       s3tglgz8hr-kbrnm935zg.gz
+|   |           |       sc2g5zqhbq-q9ht133ko3.gz
+|   |           |       sf8kf2lula-cosvhxvwiu.gz
+|   |           |       sp38n403kv-6pdc2jztkx.gz
+|   |           |       t0qo7o574p-o1o13a6vjx.gz
+|   |           |       t6e3b82hrf-mrlpezrjn3.gz
+|   |           |       tg53r17ghy-dxx9fxp4il.gz
+|   |           |       toiau3yuu0-87fc7y1x7t.gz
+|   |           |       tpsq5dibur-0i3buxo5is.gz
+|   |           |       u54oishik6-rxsg74s51o.gz
+|   |           |       u8428c4e9i-ee0r1s7dh0.gz
+|   |           |       uocis9wxbx-lzl9nlhx6b.gz
+|   |           |       uw3vb4pin6-mlv21k5csn.gz
+|   |           |       v0zgfp0y55-87fc7y1x7t.gz
+|   |           |       vltxs1u3vm-xtxxf3hu2r.gz
+|   |           |       vohcjgcjyx-43atpzeawx.gz
+|   |           |       vsrbd71spn-lcd1t2u6c8.gz
+|   |           |       vw9sls9bhj-jj8uyg4cgr.gz
+|   |           |       wa0exuuvoy-x0q3zqp4vz.gz
+|   |           |       wfe4ctl38p-mrlpezrjn3.gz
+|   |           |       wommjzbby1-jjsuc0puko.gz
+|   |           |       xa379ftczi-6pdc2jztkx.gz
+|   |           |       xbhr7l8ib0-v0zj4ognzu.gz
+|   |           |       xjm3if6zou-4d85u1mtcx.gz
+|   |           |       xu4poyfw9w-83jwlth58m.gz
+|   |           |       xw6crfa07m-cosvhxvwiu.gz
+|   |           |       y85ckkzrx2-wl58j5mj3v.gz
+|   |           |       yfc7ypekbg-mlv21k5csn.gz
+|   |           |       ym8tkpcl2i-y7v9cxd14o.gz
+|   |           |       ypthv7q62w-83jwlth58m.gz
+|   |           |       z408qb6q7a-pk9g2wxc8p.gz
+|   |           |       zap00c0tb5-63fj8s7r0e.gz
+|   |           |       ziyrgzjjat-nvvlpmu67g.gz
+|   |           |       zzna4nrm5w-notf2xhcfb.gz
+|   |           |       
+|   |           +---ref
+|   |           |       PeopleManager.Ui.Mvc.dll
+|   |           |       
+|   |           +---refint
+|   |           |       PeopleManager.Ui.Mvc.dll
+|   |           |       
+|   |           +---scopedcss
+|   |           |   +---bundle
+|   |           |   |       PeopleManager.Ui.Mvc.styles.css
+|   |           |   |       
+|   |           |   +---projectbundle
+|   |           |   |       PeopleManager.Ui.Mvc.bundle.scp.css
+|   |           |   |       
+|   |           |   \---Views
+|   |           |       \---Shared
+|   |           |               _Layout.cshtml.rz.scp.css
+|   |           |               
+|   |           \---staticwebassets
+|   +---Properties
+|   |       launchSettings.json
+|   |       
+|   +---Settings
+|   |       AppSettings.cs
+|   |       
+|   +---Views
+|   |   |   _ViewImports.cshtml
+|   |   |   _ViewStart.cshtml
+|   |   |   
+|   |   +---Functions
+|   |   |       Create.cshtml
+|   |   |       CreateEditPartial.cshtml
+|   |   |       Delete.cshtml
+|   |   |       Edit.cshtml
+|   |   |       FunctionRowPartial.cshtml
+|   |   |       Index.cshtml
+|   |   |       
+|   |   +---Home
+|   |   |       About.cshtml
+|   |   |       Index.cshtml
+|   |   |       PersonCardPartial.cshtml
+|   |   |       Privacy.cshtml
+|   |   |       
+|   |   +---Identity
+|   |   |       Register.cshtml
+|   |   |       SignIn.cshtml
+|   |   |       
+|   |   +---People
+|   |   |       Create.cshtml
+|   |   |       CreateEditPartial.cshtml
+|   |   |       Delete.cshtml
+|   |   |       Edit.cshtml
+|   |   |       Index.cshtml
+|   |   |       PersonRowPartial.cshtml
+|   |   |       
+|   |   \---Shared
+|   |           Error.cshtml
+|   |           _Layout.cshtml
+|   |           _Layout.cshtml.css
+|   |           _LoginPartial.cshtml
+|   |           _ValidationScriptsPartial.cshtml
+|   |           
+|   \---wwwroot
+|       |   favicon.ico
+|       |   
+|       +---css
+|       |       site.css
+|       |       
+|       +---js
+|       |       site.js
+|       |       
+|       \---lib
+|           +---bootstrap
+|           |   |   LICENSE
+|           |   |   
+|           |   \---dist
+|           |       +---css
+|           |       |       bootstrap-grid.css
+|           |       |       bootstrap-grid.css.map
+|           |       |       bootstrap-grid.min.css
+|           |       |       bootstrap-grid.min.css.map
+|           |       |       bootstrap-grid.rtl.css
+|           |       |       bootstrap-grid.rtl.css.map
+|           |       |       bootstrap-grid.rtl.min.css
+|           |       |       bootstrap-grid.rtl.min.css.map
+|           |       |       bootstrap-reboot.css
+|           |       |       bootstrap-reboot.css.map
+|           |       |       bootstrap-reboot.min.css
+|           |       |       bootstrap-reboot.min.css.map
+|           |       |       bootstrap-reboot.rtl.css
+|           |       |       bootstrap-reboot.rtl.css.map
+|           |       |       bootstrap-reboot.rtl.min.css
+|           |       |       bootstrap-reboot.rtl.min.css.map
+|           |       |       bootstrap-utilities.css
+|           |       |       bootstrap-utilities.css.map
+|           |       |       bootstrap-utilities.min.css
+|           |       |       bootstrap-utilities.min.css.map
+|           |       |       bootstrap-utilities.rtl.css
+|           |       |       bootstrap-utilities.rtl.css.map
+|           |       |       bootstrap-utilities.rtl.min.css
+|           |       |       bootstrap-utilities.rtl.min.css.map
+|           |       |       bootstrap.css
+|           |       |       bootstrap.css.map
+|           |       |       bootstrap.min.css
+|           |       |       bootstrap.min.css.map
+|           |       |       bootstrap.rtl.css
+|           |       |       bootstrap.rtl.css.map
+|           |       |       bootstrap.rtl.min.css
+|           |       |       bootstrap.rtl.min.css.map
+|           |       |       
+|           |       \---js
+|           |               bootstrap.bundle.js
+|           |               bootstrap.bundle.js.map
+|           |               bootstrap.bundle.min.js
+|           |               bootstrap.bundle.min.js.map
+|           |               bootstrap.esm.js
+|           |               bootstrap.esm.js.map
+|           |               bootstrap.esm.min.js
+|           |               bootstrap.esm.min.js.map
+|           |               bootstrap.js
+|           |               bootstrap.js.map
+|           |               bootstrap.min.js
+|           |               bootstrap.min.js.map
+|           |               
+|           +---jquery
+|           |   |   LICENSE.txt
+|           |   |   
+|           |   \---dist
+|           |           jquery.js
+|           |           jquery.min.js
+|           |           jquery.min.map
+|           |           jquery.slim.js
+|           |           jquery.slim.min.js
+|           |           jquery.slim.min.map
+|           |           
+|           +---jquery-validation
+|           |   |   LICENSE.md
+|           |   |   
+|           |   \---dist
+|           |           additional-methods.js
+|           |           additional-methods.min.js
+|           |           jquery.validate.js
+|           |           jquery.validate.min.js
+|           |           
+|           \---jquery-validation-unobtrusive
+|               |   LICENSE.txt
+|               |   
+|               \---dist
+|                       jquery.validate.unobtrusive.js
+|                       jquery.validate.unobtrusive.min.js
+|                       
+\---Vives.Services.Model
+    |   ServiceMessage.cs
+    |   ServiceMessageType.cs
+    |   ServiceResult.cs
+    |   ServiceResultGeneric.cs
+    |   Vives.Services.Model.csproj
+    |   
+    +---bin
+    |   \---Debug
+    |       \---net9.0
+    |               Vives.Services.Model.deps.json
+    |               Vives.Services.Model.dll
+    |               Vives.Services.Model.pdb
+    |               
+    +---Extensions
+    |       ServiceResultExtensions.cs
+    |       
+    \---obj
+        |   project.assets.json
+        |   project.nuget.cache
+        |   Vives.Services.Model.csproj.nuget.dgspec.json
+        |   Vives.Services.Model.csproj.nuget.g.props
+        |   Vives.Services.Model.csproj.nuget.g.targets
+        |   
+        \---Debug
+            \---net9.0
+                |   .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+                |   Vives.Services.Model.AssemblyInfo.cs
+                |   Vives.Services.Model.AssemblyInfoInputs.cache
+                |   Vives.Services.Model.assets.cache
+                |   Vives.Services.Model.csproj.BuildWithSkipAnalyzers
+                |   Vives.Services.Model.csproj.CoreCompileInputs.cache
+                |   Vives.Services.Model.csproj.FileListAbsolute.txt
+                |   Vives.Services.Model.dll
+                |   Vives.Services.Model.GeneratedMSBuildEditorConfig.editorconfig
+                |   Vives.Services.Model.GlobalUsings.g.cs
+                |   Vives.Services.Model.pdb
+                |   Vives.Services.Model.sourcelink.json
+                |   
+                +---ref
+                |       Vives.Services.Model.dll
+                |       
+                \---refint
+                        Vives.Services.Model.dll
+                        

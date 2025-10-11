@@ -5,9 +5,10 @@ using PeopleManager.Services;
 
 namespace PeopleManager.Api.Controllers
 {
-    [Authorize]
+    
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class PeopleController(PersonService personService) : ControllerBase
     {
         //FIND

@@ -14,6 +14,7 @@ namespace PeopleManager.Sdk
             var response = await httpClient.GetAsync("People");
             response.EnsureSuccessStatusCode();
 
+            
             var result = await response.Content.ReadFromJsonAsync<IList<PersonResult>>();
             return result ?? new List<PersonResult>();
         }

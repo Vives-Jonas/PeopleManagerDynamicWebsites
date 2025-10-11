@@ -7,9 +7,12 @@ namespace PeopleManager.Api.Installers
     {
         public static WebApplicationBuilder InstallIdentity(this WebApplicationBuilder builder)
         {
-            builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<PeopleManagerDbContext>();
+            builder.Services.AddIdentityCore<IdentityUser>()
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<PeopleManagerDbContext>();
 
             return builder;
         }
     }
 }
+    
